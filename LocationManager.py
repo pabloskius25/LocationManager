@@ -21,10 +21,8 @@ def autocomplete():
 
     if dic['status'] == 'OK':
         for i in range(0, 5):
-            # print dic['predictions'][i]['place_id'], dic['predictions'][i]['description']
             resp['predictions'] += [{'place_id': dic['predictions'][i]['place_id'], 'description': dic['predictions'][i]['description']}]
-        for pre in resp['predictions']:
-            print pre['place_id'], pre['description']
+
         return jsonify(resp)
     return "No cities found"
 
